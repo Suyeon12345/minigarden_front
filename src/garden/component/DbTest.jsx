@@ -17,6 +17,7 @@ const SpringTest = () => {
     <>
       <div>{"Spring DB test =======>"+res}</div>
       <div>수정-정원 24.01.11 8:06</div>
+      <div>수정2-정원 24.01.11 8:16</div>
     </>
 
   )
