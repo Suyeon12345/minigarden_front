@@ -2,7 +2,7 @@ import React from 'react'
 
 const Flower = () => {
   return (
-    <div>Flower</div>
+    <div>Flower-수정</div>
   )
 }
 
