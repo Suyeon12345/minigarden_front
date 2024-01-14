@@ -7,11 +7,17 @@ const CardTest = () => {
   const { num } = useParams();
 
   useEffect(() => {
-    const fetchData = async () => {
-      console.log("getCard 호출");
-      const cardData = {
-        num: num
-      };
+   // num이 변경될 때만 fetchCard 호출
+   if (num) {
+    fetchCard();
+  }
+}, [num]);
+
+  const fetchCard = async () => {
+    console.log("getCard 호출");
+    const cardData = {
+      num: num
+    };
 
       try {
         const res = await getcard(cardData);
@@ -25,8 +31,10 @@ const CardTest = () => {
       }
     };
 
-    fetchData();
-  }, [num]);
+    const handleRandomContent = () => {
+      // 새로운 content를 DB에서 가져와서 업데이트
+      fetchCard();
+    };
 
   return (
     <div>
@@ -37,6 +45,7 @@ const CardTest = () => {
           </tr>
         </tbody>
       </table>
+      <button onClick={handleRandomContent}>새 메시지 뽑기</button>
     </div>
   );
 };
