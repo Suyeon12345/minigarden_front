@@ -1,9 +1,9 @@
 import React from 'react'
-
+import CardTest from '../page/component/CardTest';
 const Card = () => {
   return (
     <div>
-      <h2>git setting</h2>
+      <CardTest></CardTest>
     </div>
     
   )
