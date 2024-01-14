@@ -3,6 +3,7 @@ import CardTest from '../page/component/CardTest';
 const Card = () => {
   return (
     <div>
+      {}
       <CardTest></CardTest>
     </div>
     

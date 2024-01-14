@@ -1,55 +1,44 @@
-import {React, useEffect, useState} from 'react'
-import {getcard} from '../service/dbLogic';
+import { React, useEffect, useState } from 'react';
+import { getcard } from '../service/dbLogic';
+import { useParams } from 'react-router-dom';
 
-/*
-const cardStyle = {
-  width: '100px',
-  height: '150px',
-  backgroundColor: '#3498db',
-  color: 'white',
-  textAlign: 'center',
-  lineHeight: '150px',
-  fontSize: '16px',
-  margin: '5px',
-  float: 'left',
-  transition: 'transform 0.5s ease',
-};
-*/
-/*const shuffledStyle = {
-  transform: 'rotateY(180deg)',
-};*/
-/*
-const buttonStyle = {
-  clear: 'both',
-  display: 'block',
-  margin: '10px auto',
-  padding: '10px',
-  fontSize: '16px',
-};
-*/
-const CardTest=()=> {
-  const [card, setCards] = useState([{}]);
-  const [content,setContent]=useState();
+const CardTest = () => {
+  const [card, setCards] = useState([]);
+  const { num } = useParams();
 
-  const getCard = async ()=>{
-    console.log("getCard호출");
-    const res =await getcard();
-    console.log(res);
-    setCards(res.data);
-    console.log(card);
-  }
+  useEffect(() => {
+    const fetchData = async () => {
+      console.log("getCard 호출");
+      const cardData = {
+        num: num
+      };
 
-  useEffect(()=>{
-    getCard();
-  },[])
+      try {
+        const res = await getcard(cardData);
+        const jsonDoc = res.data;
+        setCards({
+          num: jsonDoc[0].NUM,
+          content: jsonDoc[0].CONTENT
+        });
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, [num]);
+
   return (
-   
-      <div>
-           <td> {card.CONTENT +',' +card}</td> 
-      </div>
-     
+    <div>
+     <table>
+        <tbody>
+          <tr>
+            <td>{card.content}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   );
-}
-
+};
 
 export default CardTest;
