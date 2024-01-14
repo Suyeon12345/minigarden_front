@@ -1,6 +1,7 @@
 import { React, useEffect, useState } from 'react';
 import { getcard } from '../service/dbLogic';
 import { useParams } from 'react-router-dom';
+import '../style/card.css';
 
 const CardTest = () => {
   const [card, setCards] = useState([]);
@@ -31,21 +32,17 @@ const CardTest = () => {
       }
     };
 
-    const handleRandomContent = () => {
+    const pickRandomContent = () => {
       // 새로운 content를 DB에서 가져와서 업데이트
       fetchCard();
     };
 
   return (
-    <div>
-     <table>
-        <tbody>
-          <tr>
-            <td>{card.content}</td>
-          </tr>
-        </tbody>
-      </table>
-      <button onClick={handleRandomContent}>새 메시지 뽑기</button>
+    <div className='card-container'> {/*카드 겉표지 */}
+        <div className='card-content'>{/*카드 내용물 */}
+          {card.content}
+        </div>
+      <button className='card-button' onClick={pickRandomContent}>새 메시지 뽑기</button>
     </div>
   );
 };
