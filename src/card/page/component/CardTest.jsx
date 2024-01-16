@@ -1,7 +1,7 @@
 import { React, useEffect, useState } from 'react';
 import { getcard } from '../service/dbLogic';
 import { useParams } from 'react-router-dom';
-import '../style/card.css';
+
 
 const CardTest = () => {
   const [card, setCards] = useState([]);
@@ -38,13 +38,17 @@ const CardTest = () => {
     };
 
   return (
-    <div className='card-container'> {/*카드 겉표지 */}
-        <div className='card-content'>{/*카드 내용물 */}
+    <div className='card'> {/*카드 겉표지 */}
+      <div className="card-header"><h2 className='text-left'>오늘의 메시지</h2></div>
+      <div className="card-body">
+        <p className='text-break'>{/*카드 내용물 */}
           {card.content}
-        </div>
-      <button className='card-button' onClick={pickRandomContent}>새 메시지 뽑기</button>
-      <button className='card-button' onClick={pickRandomContent}>새 메시지 뽑기</button>
+        </p>
     </div>
+     <div className="card-footer">
+        <button className='card-button' onClick={pickRandomContent}>새 메시지 뽑기</button>
+      </div>
+   </div>
     
   );
 };
