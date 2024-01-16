@@ -43,7 +43,9 @@ const CardTest = () => {
           {card.content}
         </div>
       <button className='card-button' onClick={pickRandomContent}>새 메시지 뽑기</button>
+      <button className='card-button' onClick={pickRandomContent}>새 메시지 뽑기</button>
     </div>
+    
   );
 };
 
