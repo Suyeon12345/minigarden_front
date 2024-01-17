@@ -6,6 +6,8 @@ import Flower from './flower/page/Flower';
 import Angel from './angel/page/Angel';
 import Card from './card/page/Card';
 import Lsg from './lsg/page/Lsg';
+import Footer from './common/component/Footer'
+
 
 function App() {
   return (
@@ -19,6 +21,7 @@ function App() {
         <Route path="/card" exact={true} element={<Card/>}/>
         <Route path="/lsg" exact={true} element={<Lsg/>}/>
       </Routes>
+      <Footer/>
     </div>
   );
 }
