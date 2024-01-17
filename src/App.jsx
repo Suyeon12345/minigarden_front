@@ -27,6 +27,7 @@ function App() {
             <Route path="/card" exact={true} element={<Card/>}/>
             <Route path="/lsg" exact={true} element={<Lsg/>}/>
           </Routes>
+          <Footer></Footer>
         </Provider>
     </div>
   );
