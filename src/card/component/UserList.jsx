@@ -25,9 +25,9 @@ const Userslist = () => {
 
   return (
     <div className="row">
-      <h2>이용자목록</h2>
       {/* ... (검색 및 목록 출력 부분은 그대로 유지) */}
       <div className="col border border-white border-2"  style={{background:'hsl(193, 6%, 88%)'}}>
+      <h2>이용자목록</h2>
         <h3>검색창</h3>
         <table className='table table-bordered table-hover border border-black  m-1' >
           <thead style={{background:'hsl(193, 52%, 88%)'}} >
