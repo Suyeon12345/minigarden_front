@@ -7,13 +7,18 @@ const UserDetail = ({ user }) => {
 
   return (
     <div className="user-detail">
-      <h2>이용자상세정보</h2>
-      <p><strong>번호:</strong> {user.U_NUM}</p>
-      <p><strong>이름:</strong> {user.U_NAME}</p>
-      <p><strong>현황:</strong> {user.U_STATUS}</p>
-      <p><strong>생년월일:</strong> {user.U_BIRTH}</p>
-      <p><strong>나이:</strong> {user.U_AGE}</p>
-      <p><strong>담당자:</strong> {user.U_MANAGER}</p>
+      <table className='shadow  w-100'>
+        <tbody>
+      <td className='px-2'> <strong>번호:</strong> {user.U_NUM}</td>
+      <td className='px-2'> <strong>이름:</strong> {user.U_NAME}</td>
+      <tr> <strong className='px-2'>현황:</strong>{user.U_STATUS}
+        <td> <strong className='px-2'>생년월일:</strong>{user.U_BIRTH}</td>
+      </tr>
+      <tr><strong className='px-2'>나이:</strong>{user.U_AGE}
+      <td><strong className='px-2'>담당자:</strong>{user.U_MANAGER}</td>
+      </tr>
+      </tbody>
+      </table>
     </div>
   );
 };

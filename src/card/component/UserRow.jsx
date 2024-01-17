@@ -9,7 +9,7 @@ const UserRow = ({ users, setusers, onClickRow }) => {
 
   return (
     <>
-      <tr className='' onClick={handleRowClick}>
+      <tr className='' onClick={handleRowClick} style={{cursor:'pointer'}}>
         <td className='text-center'><h6 className="pe-auto">{users.U_NUM}</h6></td>
         <td className='text-center'> <h6 className="pe-auto">{users.U_NAME} </h6></td>
         <td className='text-center'> <h6 className="pe-auto">{users.U_STATUS}</h6></td>

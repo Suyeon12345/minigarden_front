@@ -35,25 +35,26 @@ const CardTest = () => {
   };
 
   const setNumOdd = () => {
-    setCards({ num: 1 }); // Set num to an odd value
+    setCards({ num: 1 }); // 홀수만 채번
   };
 
   const setNumEven = () => {
-    setCards({ num: 2 }); // Set num to an even value
+    setCards({ num: 2 }); // 짝수만 채번 
   };
 
   return (
     <div className='card'>
-      <div className="card-header"><h2 className='text-left'>오늘의 메시지</h2></div>
+      <div className="card-header"><h2 className='text-left'>오늘의 메시지</h2>
         {card.content && (
-          <>
-            <button className='card-button' onClick={setNumOdd}>홀수</button>
-            <button className='card-button' onClick={setNumEven}>짝수</button>
-          </>
+          <div className='d-grid gap-2 d-md-block'>
+            <button className='card-button ' onClick={setNumOdd}>홀수</button>
+            <button className='card-button ' onClick={setNumEven}>짝수</button>
+          </div>
         )}
+        </div>
       <div className="card-body">
         <p className='text-break'>
-          {card.content}
+         {card.content}
         </p>
       </div>
       <div className="card-footer">
