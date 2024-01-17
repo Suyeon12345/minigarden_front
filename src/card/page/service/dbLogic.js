@@ -28,18 +28,3 @@ export const getcard = () => {
       }
     });
   };
-  
-  export const userDetailDB = (users)=>{
-    return new Promise((resolve,reject)=> {
-      try {
-        const response = axios({
-          method: "get",
-          url: process.env.REACT_APP_SPRING_IP+"card/userdetail",
-          params: users
-        });
-        resolve(response);
-      } catch (error) {
-        reject(error);
-      }
-    });
-  }
