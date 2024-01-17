@@ -5,6 +5,7 @@ import ButtonGroup from '../component/ButtonGroup'
 import SideBar from '../component/SideBar'
 import SelectBar from '../component/SelectBar'
 import Approval from '../component/Approval'
+import Agreement from '../component/Agreement'
 
 
 const Garden = () => {
@@ -14,7 +15,7 @@ const Garden = () => {
       <div className={styles.treeview}><TreeView/></div>
       <div className={styles.selectbar}><SelectBar/></div>
       <div className={styles.content1}><Approval/></div>  
-      <div className={styles.content2}>content2</div>  
+      <div className={styles.content2}><Agreement/></div>  
       <div className={styles.bottom}><ButtonGroup/></div>  
     </div>
   )

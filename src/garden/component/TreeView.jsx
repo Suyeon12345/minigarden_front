@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { getDeptData } from '../service/dbLogic';
 import { useDispatch } from 'react-redux';
 import gardenSlice from '../../common/service/gardenSlice';
+import styles from '../css/garden.module.css'
 
 const EmpBlock = styled.li`
 list-style-type: none;
@@ -29,81 +30,79 @@ const Employee = ({ empData, onEmpClick }) => (
 );
 
 const Department = ({ deptData, onEmpClick }) => {
-const [onOff, setOnOff] = useState(false);
+  const [onOff, setOnOff] = useState(false);
 
-const handleToggle = () => {
-  setOnOff((prev) => !prev);
-};
+  const handleToggle = () => {
+    setOnOff((prev) => !prev);
+  };
 
-return (
-  <div>
-    <>
-      <input
-        className="form-check-input"
-        type="checkbox"
-        id="flexCheckDefault"
-        checked={onOff}
-        onClick={handleToggle}
-      />
-      <label className="form-check-label" htmlFor="flexCheckDefault">
-        {deptData.dept_name}
-      </label>
-      {onOff === true ? (
-        <Employee empData={deptData.emp} onEmpClick={onEmpClick} />
-      ) : null}
-    </>
-  </div>
-);
-};
+  return (
+    <div>
+      <>
+        <input
+          className="form-check-input"
+          type="checkbox"
+          id="flexCheckDefault"
+          checked={onOff}
+          onClick={handleToggle}
+        />
+        <label className="form-check-label" htmlFor="flexCheckDefault">
+          {deptData.dept_name}
+        </label>
+        {onOff === true ? (
+          <Employee empData={deptData.emp} onEmpClick={onEmpClick} />
+        ) : null}
+      </>
+    </div>
+  );
+  };
 
 const TreeView = () => {
-const [deptData, setDeptData] = useState([]);
-const [empData, setEmpData] = useState({
-  emp_id:'',
-  emp_name:'',
-  lev:'',
-  emp_type:'',
-});
 
-const getData = async () => {
-  const response = await getDeptData();
-  setDeptData(response.data);
-};
+  const [deptData, setDeptData] = useState([]);
+  const [empData, setEmpData] = useState({
+    emp_id:'',
+    emp_name:'',
+    lev:'',
+    emp_type:'',
+  });
+  const dispatch = useDispatch();
 
-useEffect(() => {
-  getData();
-}, []);
+  const getData = async () => {
+    const response = await getDeptData();
+    setDeptData(response.data);
+  };
 
-const handleEmpClick = (deptIndex, empIndex) => {
-  const updatedDeptData = [...deptData];
-  updatedDeptData.forEach((dept) =>
-    dept.emp.forEach((emp) => (emp.isSelected = false))
+  useEffect(() => {
+    getData();
+  }, []);
+
+  const handleEmpClick = (deptIndex, empIndex) => {
+    const updatedDeptData = [...deptData];
+    updatedDeptData.forEach((dept) =>
+      dept.emp.forEach((emp) => (emp.isSelected = false))
+    );
+    updatedDeptData[deptIndex].emp[empIndex].isSelected = true;
+    setDeptData(updatedDeptData);
+    setEmpData({...updatedDeptData[deptIndex].emp[empIndex]});
+    dispatch(gardenSlice.actions.setEmp({...updatedDeptData[deptIndex].emp[empIndex]}));
+  };
+
+  return (
+
+    <>
+      <h1>조직도</h1>
+      <div className={styles.department}>
+        {deptData.map((dept, index) => (
+          <Department
+            key={index}
+            deptData={dept}
+            onEmpClick={(empIndex) => handleEmpClick(index, empIndex)}
+          />
+        ))}
+      </div>
+    </>
   );
-  updatedDeptData[deptIndex].emp[empIndex].isSelected = true;
-  setEmpData({...updatedDeptData[deptIndex].emp[empIndex]});
-  setDeptData(updatedDeptData);
-};
-
-const handleBtnClick = () =>{
-  dispatch(gardenSlice.actions.setEmp(empData))
-}
-
-const dispatch = useDispatch();
-
-return (
-  <div>
-    <h1>조직도</h1>
-    <button type="button" onClick={handleBtnClick} className="btn btn-secondary mt-3 mb-3">결재라인</button>
-    <button type="button" onClick={handleBtnClick} className="btn btn-secondary ms-2 mt-3 mb-3">합의라인</button>
-    {deptData.map((dept, index) => (
-      <Department
-        key={index}
-        deptData={dept}
-        onEmpClick={(empIndex) => handleEmpClick(index, empIndex)}
-      />
-    ))}
-  </div>
-);
 };
 
 export default TreeView;

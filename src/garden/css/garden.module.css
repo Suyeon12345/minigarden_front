@@ -15,7 +15,7 @@
 .sidebar{
   background-color: rgb(233, 228, 228);
   grid-area: sidebar;
-  padding: 10px;
+  padding: 20px;
 }
 .treeview{
   background-color: rgb(223, 223, 223);
@@ -29,16 +29,22 @@
   padding: 20px;
 }
 .content1{
-  background-color: rgb(128, 128, 128);
+  background-color: rgb(164, 161, 161);
   grid-area: content1;
   padding: 20px;
+  overflow: auto;
 }
 .content2{
   background-color: rgb(113, 113, 113);
   grid-area: content2;
   padding: 20px;
+  overflow: auto;
 }
 .bottom{
   grid-area: bottom;
   padding: 20px;
+}
+.department{
+  background-color: rgb(203, 201, 201);
+  height: 100%;
 }

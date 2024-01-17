@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const gardenSlice = createSlice({
   name: "gardenSlice",
-  initialState:{emp_id:"as",emp_name:"asd", lev:"부장", emp_type:"정규직"},
+  initialState:{},
   reducers:{
     setEmp:(state, action)=>
     {
