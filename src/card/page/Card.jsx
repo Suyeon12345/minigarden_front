@@ -1,5 +1,5 @@
 import React from 'react'
-import UserList from '../component/UserList';
+import UserListPage from '../component/UserList';
 import Cardnavbar from '../component/Cardnavbar';
 
 const Card = () => {
@@ -10,7 +10,7 @@ const Card = () => {
       <Cardnavbar></Cardnavbar>
       </div>
       <div className='col m-3'>
-        <UserList></UserList>
+        <UserListPage></UserListPage>
       </div>
     </div>
   </div>
