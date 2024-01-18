@@ -106,7 +106,7 @@ const UsersListPage = () => {
             </button>
         </div>
       </div>
-      <div className='col shadow-sm' >
+      <div className='col shadow-sm p-3' >
       {/* UserDetail에 선택된 사용자 정보 전달 */}
       <h2 className='text-left' >이용자상세정보</h2>
       {selectedUser && <UserDetail user={selectedUser} />}
