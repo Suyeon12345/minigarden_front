@@ -15,7 +15,8 @@ const ButtonGroup = () => {
       newAgrList.push({sign_no:index+1, ...element})
     })
     const finalList = {approval:[...newAppList], agreement:[...newAgrList]};
-    console.log(finalList);
+    const outString = JSON.stringify(finalList)
+    alert(outString);
   }
   return (
     <>
