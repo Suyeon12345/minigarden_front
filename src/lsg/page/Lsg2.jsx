@@ -2,7 +2,7 @@ import React from 'react'
 
 const Lsg = () => {
   return (
-    <div>Lsg</div>
+    <div>Lsg2</div>
   )
 }
 
