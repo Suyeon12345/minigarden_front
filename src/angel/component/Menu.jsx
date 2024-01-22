@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from "../../angel/css/Angel.css";
+import styles from "../../angel/css/angel.module.css";
 
 function Menu() {
     return (

@@ -1,16 +1,16 @@
 import React, { useState, useRef } from 'react';
-import styles from "../css/Angel.css";
+import styles from '../css/angel.module.css';
 import { useReactToPrint } from 'react-to-print';
 
 const RightContent = ({ programDetail, onRowClick }) => {
-    console.log("RightContent");
+    console.log('RightContent');
     console.log(programDetail);
 
     const getDayOfWeek = (dayNumber) => {
         const days = ['월요일', '화요일', '수요일', '목요일', '금요일', '토요일', '일요일'];
         return days[dayNumber - 1] || '';
     };
-
+    // eslint-disable-next-line no-unused-vars
     const formatDate = (date) => {
         return new Date(date).toLocaleDateString();
     };
@@ -72,8 +72,8 @@ const RightContent = ({ programDetail, onRowClick }) => {
                         <table className="table table-bordered">
                             <tbody className="fs-6">
                             <tr>
-                                <th style={{ width: '25%' }}>NO</th>
-                                <td colSpan="5" style={{ width: '50%' }}>{pgNo}</td>
+                                <th style={{ width: '30%' }}>프로그램 NO</th>
+                                <td colSpan="5" style={{ width: '80%' }}>{pgNo}</td>
                             </tr>
                             <tr>
                                 <th style={{ width: '25%' }}>프로그램명</th>

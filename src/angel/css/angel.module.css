@@ -1,40 +1,25 @@
-.scrollableContent {
-  max-height: 100vh; /* 화면 높이의 100%로 설정 */
-  overflow-y: auto;
-}
-
-.custom-datepicker {
-  width: 100%;
-  font-size: 14px;
-  marginRight: '5px';
-}
-
-.program {
-  width: 40%;
-  font-size: 1rem;
-  line-height: 2;
-  display: inline-block;
-  vertical-align: middle;
-}
 
 .box1 {
   grid-area: header;
 }
 .box2 {
   grid-area: menu;
-  flex-basis: 15%;
+  flex-basis: 10%;
+  min-width: 200px; /* 최소 너비 지정 */
 }
+
 .box3 {
   grid-area: main;
-  flex-basis: 45%;
+  flex-basis: 50%;
+  min-width: 400px; /* 최소 너비 지정 */
 }
+
 .box4 {
   grid-area: right;
-  flex-basis: 40%;
+  flex-basis: 50%;
+  min-width: 400px; /* 최소 너비 지정 */
 }
-.box5 {
-  grid-area: footer;
-}
+
 .container {
   display: grid;
   grid-template-areas: 'header header header header header header' 'menu main main main right right' 'menu footer footer footer footer footer';
@@ -49,4 +34,8 @@
   text-align: center;
   padding: 5px 0;
   font-size: 30px;
+}
+.scrollableContent {
+  max-height: 100vh; /* 화면 높이의 100%로 설정 */
+  overflow-y: auto;
 }
