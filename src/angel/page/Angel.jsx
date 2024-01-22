@@ -6,12 +6,12 @@ import { programListDB } from '../service/dbLogic';
 import styles from '../css/angel.module.css';
 
 const Angel = () => {
-    console.log('AngelPage');
-
+    console.log('AngelPage2');
+    console.log('AngelPage3');
+    console.log('AngelPage4');
     const [programList, setProgramList] = useState([]);
     const [programDetail, setProgramDetail] = useState(null);
-
-    //전체조회해 온 값을 저장해두고, 나중에 디테일 조회할 때 사용해보자
+    //전체조회해 온 값을 저장해두고, 나중에 디테일g 조회할 때 사용해보자
     //저장은 SetProgramList를 통해 상태에 저장!! 만약 에러 발생하면 에러 출력
     const getProgramList = async () => {
         try {
