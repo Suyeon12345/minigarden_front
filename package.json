@@ -12,14 +12,14 @@
     "bootstrap": "^5.3.2",
     "exceljs": "^4.4.0",
     "react": "^18.2.0",
-<<<<<<< HEAD
+
     "react-bootstrap": "^2.10.0",
     "react-dom": "^18.2.0",
     "react-dropzone": "^14.2.3",
     "react-redux": "^9.1.0",
     "react-router-dom": "^6.21.1",
     "react-scripts": "^5.0.1",
-=======
+
     "react-datepicker": "^4.25.0",
     "react-dom": "^18.2.0",
     "react-kakao-maps-sdk": "^1.1.24",
@@ -27,7 +27,6 @@
     "react-router-dom": "^6.21.1",
     "react-scripts": "5.0.1",
     "react-to-print": "^2.14.15",
->>>>>>> 1911b3350cfa016fd3bb2ee3e88e4886eb45674f
     "styled-components": "^6.1.8",
     "web-vitals": "^2.1.4",
     "xlsx": "^0.18.5"
