@@ -1,27 +1,19 @@
 import React, { useEffect, useState } from "react";
 import detail from "../css/detail.module.css";
 import { Button, InputGroup, Form, Tabs, Tab } from "react-bootstrap";
-import { useDispatch, useSelector } from "react-redux";
-import DeptUpdate from "./Update";
+import { useSelector } from "react-redux";
 
-const DeptDetail = () => {
+const DeptUpdate = () => {
   const dno = useSelector((state) => state.detailInfo.value);
-  const dispatch = useDispatch();
-  const updatebtn = () => {
-    console.log("update 버튼 클릭");
-    dispatch(setDetail(true));
-  };
 
   return (
     <div className="container mt-3">
-      <h3 className="mb-3">부서상세</h3>
+      <h3 className="mb-3">부서수정</h3>
       <div className="container">
         <Button className={detail.delete} variant="secondary">
-          삭제
+          취소
         </Button>
-        <Button variant="success" onClick={() => updatebtn()}>
-          수정
-        </Button>
+        <Button variant="success">수정</Button>
         <div className={detail.container}>
           <div className={detail.detail}>
             <div className={detail.input}>
@@ -32,7 +24,6 @@ const DeptDetail = () => {
                 <Form.Control
                   aria-label="Small"
                   aria-describedby="inputGroup-sizing-sm"
-                  disabled
                   defaultValue={dno.D_ID}
                 />
               </InputGroup>
@@ -43,7 +34,6 @@ const DeptDetail = () => {
                 <Form.Control
                   aria-label="Small"
                   aria-describedby="inputGroup-sizing-sm"
-                  disabled
                   defaultValue={dno.D_NAME}
                 />
               </InputGroup>
@@ -54,7 +44,6 @@ const DeptDetail = () => {
                 <Form.Control
                   aria-label="Small"
                   aria-describedby="inputGroup-sizing-sm"
-                  disabled
                   defaultValue={dno.D_NAE}
                 />
               </InputGroup>
@@ -80,4 +69,4 @@ const DeptDetail = () => {
   );
 };
 
-export default DeptDetail;
+export default DeptUpdate;

@@ -1,6 +1,6 @@
 
   .container {
-    border-top : 2px solid black;
+ 
     display: grid;
     width: 100%;
     height: 100%;
@@ -18,9 +18,9 @@
 
   .list {
     grid-area: b;
-    background-color: rgb(225, 244, 244);
+
   }
   .detail { 
     grid-area: c;
-    background-color: rgb(215, 227, 248);
+  
   }

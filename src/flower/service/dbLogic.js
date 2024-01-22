@@ -24,7 +24,35 @@ export const DeptInsertDB = (dept) => {
     return new Promise((resolve, reject) => {
         try{const response = axios({
             method : "post",
-            url : process.env.REACT_APP_SPRING_IP + "flower/deptcreate",
+            url : process.env.REACT_APP_SPRING_IP + "flower/deptinsert",
+            params : dept
+        })
+            resolve(response)
+        }catch(error){
+            reject(error)
+        }
+    })
+}
+
+export const DeptUpdateDB = (dept) => {
+    return new Promise((resolve, reject) => {
+        try{const response = axios({
+            method : "post",
+            url : process.env.REACT_APP_SPRING_IP + "flower/deptupdate",
+            params : dept
+        })
+            resolve(response)
+        }catch(error){
+            reject(error)
+        }
+    })
+}
+
+export const DeptDeletetDB = (dept) => {
+    return new Promise((resolve, reject) => {
+        try{const response = axios({
+            method : "post",
+            url : process.env.REACT_APP_SPRING_IP + "flower/deptdelete",
             params : dept
         })
             resolve(response)
