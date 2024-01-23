@@ -44,9 +44,9 @@
   flex: 1;
   display: flex;
 }
-.container > div {
+/* .container > div {
   background-color: #eee;
   text-align: center;
   padding: 5px 0;
   font-size: 30px;
-}
+} */
