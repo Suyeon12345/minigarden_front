@@ -37,7 +37,7 @@ const CreateModal = ({ handleRefresh }) => {
       d_nae: nae,
     };
     if (id == "" || name == "" || nae == "") {
-      alert("항목 값을 입력해주세요!");
+      alert("항목 값을 입력해주세요!!");
     } else {
       const res = await DeptInsertDB(dept);
       alert("게시글이 등록되었습니다!!");
