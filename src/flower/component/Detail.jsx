@@ -3,13 +3,13 @@ import detail from "../css/detail.module.css";
 import { Button, InputGroup, Form, Tabs, Tab } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import DeptUpdate from "./Update";
-
+import { setUpdate } from "../../common/service/flowerSlice";
 const DeptDetail = () => {
   const dno = useSelector((state) => state.detailInfo.value);
   const dispatch = useDispatch();
   const updatebtn = () => {
     console.log("update 버튼 클릭");
-    dispatch(setDetail(true));
+    dispatch(setUpdate(true));
   };
 
   return (

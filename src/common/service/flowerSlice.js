@@ -6,6 +6,9 @@ const detailInfo = createSlice({
     reducers : {
         setDetail:(state, action)=> {
             state.value = action.payload
+        },
+        setUpdate:(state, action)=> {
+            state.value = action.payload
         }
     }
 })
