@@ -40,7 +40,7 @@ const CreateModal = ({ handleRefresh }) => {
       alert("항목 값을 입력해주세요!");
     } else {
       const res = await DeptInsertDB(dept);
-      alert("게시글이 등록되었습니다!");
+      alert("게시글이 등록되었습니다!!");
       handleClose();
       handleRefresh();
     }
