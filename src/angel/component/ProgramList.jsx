@@ -39,9 +39,6 @@ const ProgramList = ({ programList, getProgramList, onRowClick, programDetail })
         <div>
             <div className={styles.scrollableContent}>
                 <div className={styles.box2}>
-                    <div>
-                        <h5>프로그램 현황</h5>
-                    </div>
                     <div className="d-flex">
                         <select
                             id="gubun"
