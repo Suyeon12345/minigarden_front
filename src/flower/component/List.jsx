@@ -33,6 +33,7 @@ const DeptList = () => {
     setDept(res.data);
   };
 
+
   return (
       <div className={list.container}>
 

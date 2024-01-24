@@ -3,6 +3,7 @@ import detail from "../css/detail.module.css";
 import { Button, InputGroup, Form, Tabs, Tab } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import {DeptDeletetDB, DeptListDB} from "../service/dbLogic";
+import UpdateModal from "./UpdateModal";
 
 const DeptDetail = ({handleRefresh}) => {
   const [dept, setDept] = useState([]);
@@ -30,9 +31,7 @@ const DeptDetail = ({handleRefresh}) => {
         <Button className={detail.delete} variant="secondary" onClick={() => deptdelete()}>
           삭제
         </Button>
-        <Button variant="success">
-          수정
-        </Button>
+      <UpdateModal handleRefresh={handleRefresh}></UpdateModal>
         <div className={detail.container}>
           <div className={detail.detail}>
             <div className={detail.input}>
