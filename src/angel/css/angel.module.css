@@ -50,3 +50,22 @@
   max-height: 100vh; /* 화면 높이의 100%로 설정 */
   overflow-y: auto;
 }
+
+.report {
+  break-after: page;
+}
+
+.report + .report {
+  margin-top: 40px;
+}
+
+@media print {
+  .report + .report {
+    margin-top: 10mm;
+  }
+}
+
+@page {
+  size: A4;
+  margin: 30mm;
+}

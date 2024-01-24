@@ -1,7 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import FullCalendar from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
-import interactionPlugin from "@fullcalendar/interaction" // needed for dayClick
+import interactionPlugin from '@fullcalendar/daygrid'
+import timeGridPlugin from '@fullcalendar/daygrid'
+import styled from "@emotion/styled";
+
+
+    //캘린더 스타일...얘는 캘린더를 감싸는 식으로 넣어줘야함(모듈 경로 찾아들어가도 못 함 ㅠ)
+    const StyleWrapper = styled.div`
+        font-size: 15px;
+        width: 100%;
+        height : 100%;
+        padding: 5px;`
 
     const Fullcallendar = () => {
         const [events, setEvents] = useState([]);
@@ -10,17 +20,6 @@ import interactionPlugin from "@fullcalendar/interaction" // needed for dayClick
                 setEvents(data);
             });
         }, []);
-        //스타일 이렇게 따로 줘?
-        const calendarOptions = {
-            height: '60vh',
-            fontSize: '8px',
-            headerToolbar: {
-                left: 'prev,next today',
-                center: 'title',
-                right: 'dayGridMonth,timeGridWeek,timeGridDay',
-            },
-            themeSystem: 'bootstrap',
-        };
         const handleDateClick = (arg) => { // bind with an arrow function
             alert(arg.dateStr)
         }
@@ -35,13 +34,23 @@ import interactionPlugin from "@fullcalendar/interaction" // needed for dayClick
             ];
         };
         return (
-            <FullCalendar
-                plugins={[ dayGridPlugin, interactionPlugin ]}
-                dateClick={handleDateClick}
-                initialView="dayGridMonth"
-                events={events}
-                options={calendarOptions} // 스타일 적용
-            />
+            <>
+                <StyleWrapper>
+                    <FullCalendar
+                        plugins={[dayGridPlugin, interactionPlugin, timeGridPlugin]}
+                        headerToolbar={{
+                            left: 'prev',
+                            center: 'title',
+                            right: 'next',
+                        }}
+                        initialView="dayGridMonth"
+                        nowIndicator={true}
+                        selectable={true}
+                        locale={'ko'} // 한글 표기
+                        events={events}
+                    />
+                </StyleWrapper>
+            </>
         );
     };
 

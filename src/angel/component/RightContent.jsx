@@ -45,6 +45,8 @@ const RightContent = ({ programDetail, onRowClick }) => {
     };
 
     //프린트 관련
+    /*https://www.npmjs.com/package/react-to-print*/
+    //useRef는 함수형 컴포넌트에서 mutable한(ref 객체) 값을 생성하고 관리
     const componentRef = useRef();
 
     const handlePrint = useReactToPrint({
