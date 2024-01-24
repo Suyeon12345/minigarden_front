@@ -69,8 +69,8 @@ const TreeView = () => {
   const dispatch = useDispatch();
 
   const getData = async () => {
-    const response = await getDeptData();
-    setDeptData(response.data);
+    //const response = await getDeptData();
+    //setDeptData(response.data);
   };
 
   useEffect(() => {
