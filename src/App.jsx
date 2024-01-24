@@ -17,16 +17,16 @@ function App() {
     <div className="App">
       <Provider store={store}>
         <Navbar></Navbar>
-        <Routes>
-          <Route path="/" exact={true} element={<Home />} />
-          <Route path="/garden" exact={true} element={<Garden />} />
-          <Route path="/flower" exact={true} element={<Flower />} />
-          <Route path="/angel" exact={true} element={<Angel />} />
-          <Route path="/card" exact={true} element={<Card />} />
-          <Route path="/lsg" exact={true} element={<Lsg />} />
-        </Routes>
-        <Footer></Footer>
-      </Provider>
+          <Routes>
+            <Route path="/" exact={true} element={<Home/>}/>
+            <Route path="/garden" exact={true} element={<Garden/>}/>
+            <Route path="/flower" exact={true} element={<Flower/>}/>
+            <Route path="/angel" exact={true} element={<Angel/>}/>
+            <Route path="/card" exact={true} element={<Card/>}/>
+            <Route path="/lsg" exact={true} element={<Lsg/>}/>
+          </Routes>
+          <Footer></Footer>
+        </Provider>
     </div>
   );
 }
