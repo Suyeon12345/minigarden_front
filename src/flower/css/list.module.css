@@ -1,10 +1,25 @@
+.container {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: 1fr 1fr ;
+    grid-template-rows:  850px;
+    grid-template-areas:
+		"   a   b   ";
+}
+
+
+
 .list {
+    padding: 20px;
+    grid-area: a;
+    border-right : 1px dotted black;
 
 }
 .search {
     margin-bottom: 10px;
 
 }
-.table {
-
+.detail{
+    grid-area: b;
 }

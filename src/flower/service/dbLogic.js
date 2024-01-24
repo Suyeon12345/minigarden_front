@@ -37,7 +37,7 @@ export const DeptInsertDB = (dept) => {
 export const DeptUpdateDB = (dept) => {
     return new Promise((resolve, reject) => {
         try{const response = axios({
-            method : "post",
+            method : "put",
             url : process.env.REACT_APP_SPRING_IP + "flower/deptupdate",
             params : dept
         })
@@ -51,12 +51,13 @@ export const DeptUpdateDB = (dept) => {
 export const DeptDeletetDB = (dept) => {
     return new Promise((resolve, reject) => {
         try{const response = axios({
-            method : "post",
+            method : "delete",
             url : process.env.REACT_APP_SPRING_IP + "flower/deptdelete",
             params : dept
         })
             resolve(response)
         }catch(error){
+            console.log(error)
             reject(error)
         }
     })
