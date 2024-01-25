@@ -1,5 +1,5 @@
 import { React} from 'react';
-const Cardnavbar=()=>{
+const CardNavbar=()=>{
 return (
 <nav className='nav nav-pills flex-column'>
 <div className='container-fluid '>
@@ -17,4 +17,4 @@ return (
 
 );
 };
-export default Cardnavbar;
+export default CardNavbar;
