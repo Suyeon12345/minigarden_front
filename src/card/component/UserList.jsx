@@ -3,8 +3,10 @@ import { userList } from '../page/service/dbLogic';
 import UserRow from './UserRow';
 import UserDetail from './UserDetail'; // UserDetail 컴포넌트 import
 import CardTest from './CardTest';
+import {Table ,Button, Form, InputGroup} from 'react-bootstrap';
+import { Card, UserDetail2 , Containerz } from '../styles/cardStyle';
 
-const UsersListPage = () => {
+const UserPage = () => {
   const [users, setUsers] = useState([]);
   const [selectedUser, setSelectedUser] = useState(null); // 선택된 사용자 정보 저장
 
@@ -52,36 +54,29 @@ const UsersListPage = () => {
   };
 
   return (
-    <div className="row">
+    <Containerz>
+    <div>
       {/* ... (검색 및 목록 출력 부분은 그대로 유지) */}
       <div className="col border border-white border-2"  style={{background:'hsl(193, 6%, 88%)'}}>
       <h2>이용자목록</h2>
-      <div className="row">
-          <div className="col-3">
-            <select id="gubun" className="form-select" aria-label="분류선택">
+          
+    <div>
+        <div>
+            <InputGroup  className="mb-3">
+            <div className="col-3">
+            <Form.Select id="gubun" className="form-select" aria-label="분류선택">
               <option defaultValue>분류선택</option>
               <option value="u_name">이름</option>
               <option value="u_status">현황</option>
               <option value="u_manager">담당자</option>
-            </select>
-          </div>
-          <div className="col-6">
-            <input
-              type="text"
-              id="keyword"
-              className="form-control"
-              placeholder="검색어를 입력하세요"
-              aria-label="검색어를 입력하세요"
-              aria-describedby="btn_search"
-            />
-          </div>
-          <div className="col-3">
-            <button className="px-4"id="btn_search" onClick={handleSearchClick}>
-              검색
-            </button>
-          </div>
+            </Form.Select>
         </div>
-        <table className='table table-bordered table-hover border border-black  m-1' >
+            <Form.Control id="keyword" placeholder="검색어를 입력하세요" aria-label="검색어를 입력하세요" aria-describedby="btn_search"/>
+            <Button variant="info"id="btn_search" onClick={handleSearchClick}> 검색</Button>
+            </InputGroup>
+        </div>
+    </div>
+        <Table striped bordered hover>
           <thead style={{background:'hsl(193, 52%, 88%)'}} >
             <tr>
               <th className='text-center'>#</th>
@@ -99,23 +94,22 @@ const UsersListPage = () => {
                 <UserRow key={key} users={user} onClickRow={handleRowClick} className />
               ))}
           </tbody>
-        </table>
+        </Table>
         <div>
-        <button variant="warning" onClick={uzerListAll}>
+        <Button variant="warning" onClick={uzerListAll}>
               전체조회
-            </button>
+            </Button>
         </div>
       </div>
-      <div className='col shadow-sm p-3' >
-      {/* UserDetail에 선택된 사용자 정보 전달 */}
-      <h2 className='text-left' >이용자상세정보</h2>
-      {selectedUser && <UserDetail user={selectedUser} />}
-      <div className='col shadow-sm'>
-        <CardTest></CardTest>
-      </div>
-      </div>
     </div>
+      <UserDetail2 >
+         <h2 className='text-left' >이용자상세정보</h2> 
+      {/* UserDetail에 선택된 사용자 정보 전달 */}
+      {selectedUser && <UserDetail user={selectedUser} />}
+      <Card><CardTest></CardTest></Card>
+      </UserDetail2>
+    </Containerz>
   );
 };
 
-export default UsersListPage;
+export default UserPage;

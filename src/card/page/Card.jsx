@@ -1,19 +1,21 @@
 import React from 'react'
-import UserListPage from '../component/UserList';
-import Cardnavbar from '../component/Cardnavbar';
+import {Containers,  Cardnavbar2 ,UserList2,UserDetail2,CardTest2 } from '../styles/cardStyle';
+import CardNavbar from '../component/Cardnavbar';
+import UserPage from '../component/UserList';
+import CardTest from '../component/CardTest';
+
 
 const Card = () => {
+  
   return ( 
-    <div style={{padding:'0,103,0,0'}}>
-    <div className='row px-2 '>
-      <div className='col-2 t-2 border border-success'>
-      <Cardnavbar></Cardnavbar>
-      </div>
-      <div className='col m-3 '>
-        <UserListPage></UserListPage>
-      </div>
-    </div>
-  </div>
+    
+    <>
+    <Containers>
+    <Cardnavbar2><CardNavbar/></Cardnavbar2>
+    <UserList2><UserPage/></UserList2>
+    </Containers>
+    </>
+
   )
 }
 
