@@ -6,6 +6,8 @@ const ProgramList = ({ programList, getProgramList, onRowClick, programDetail })
     console.log('programList:', programList);
     // eslint-disable-next-line no-unused-vars
     const [selectedProgram, setSelectedProgram] = useState(null);
+    const [searchedPrograms, setSearchedPrograms] = useState([]);
+    const [searchKeyword, setSearchKeyword] = useState(''); // 추가: 검색어 상태
 
     useEffect(() => {
         setSelectedProgram(null);
@@ -35,6 +37,28 @@ const ProgramList = ({ programList, getProgramList, onRowClick, programDetail })
         }
     };
 
+    //검색 - 기존의 programList를 필터링을 걸어서 사용하기
+    const handleSearch = () => {
+        const gubun = document.getElementById('gubun').value;
+        const keyword = document.getElementById('keyword').value;
+
+        // 분류, 검색어로 필터링
+        const filteredList = programList.filter((program) => {
+            const value = program[gubun];
+            return value && value.includes(keyword);
+        });
+        setSearchedPrograms(filteredList);
+        setSearchKeyword(keyword);
+        console.log(filteredList);
+    }
+
+    // 전체조회 & 초기화 설정
+    const handleShowAll = () => {
+        setSearchedPrograms([]); // 검색 결과 초기화
+        setSearchKeyword(''); // 추가: 검색어 초기화
+    }
+
+
     return (
         <div>
             <div className={styles.scrollableContent}>
@@ -57,10 +81,13 @@ const ProgramList = ({ programList, getProgramList, onRowClick, programDetail })
                             className="form-control me-2"
                             style={{width: '60%'}}
                             placeholder="검색내용을 입력하세요"
+                            onChange={(e) => setSearchKeyword(e.target.value)}
+                            value={searchKeyword}
                         />
                         <button
                             className="btn btn-outline-info"
                             style={{minWidth: '15%', marginRight: '0 0.5rem'}}
+                            onClick={handleSearch}
                         >
                             검색
                         </button>
@@ -82,17 +109,29 @@ const ProgramList = ({ programList, getProgramList, onRowClick, programDetail })
                     </tr>
                     </thead>
                     <tbody className="fs-6">
-                    {programList.map((program, index) => (
-                        <tr  key={program.PG_NO} onClick={() => onRowClick(program)}>
-                            <td>{index + 1}</td>
-                            <td>{program.PG_NAME}</td>
-                            <td>{program.PG_CATEGORY}</td>
-                            <td>{program.PG_TEACHER}</td>
-                            <td>{getDayOfWeek(program.PG_DAYSOFWEEK)}</td>
-                            <td>{new Date(program.PG_START).toLocaleDateString()}</td>
-                            <td>{getGubun(program.PG_START, program.PG_END)}</td>
-                        </tr>
-                    ))}
+                    {searchedPrograms.length > 0
+                        ? searchedPrograms.map((program, index) => (
+                            <tr key={program.PG_NO} onClick={() => onRowClick(program)}>
+                                <td>{index + 1}</td>
+                                <td>{program.PG_NAME}</td>
+                                <td>{program.PG_CATEGORY}</td>
+                                <td>{program.PG_TEACHER}</td>
+                                <td>{getDayOfWeek(program.PG_DAYSOFWEEK)}</td>
+                                <td>{new Date(program.PG_START).toLocaleDateString()}</td>
+                                <td>{getGubun(program.PG_START, program.PG_END)}</td>
+                            </tr>
+                        ))
+                        : programList.map((program, index) => (
+                            <tr key={program.PG_NO} onClick={() => onRowClick(program)}>
+                                <td>{index + 1}</td>
+                                <td>{program.PG_NAME}</td>
+                                <td>{program.PG_CATEGORY}</td>
+                                <td>{program.PG_TEACHER}</td>
+                                <td>{getDayOfWeek(program.PG_DAYSOFWEEK)}</td>
+                                <td>{new Date(program.PG_START).toLocaleDateString()}</td>
+                                <td>{getGubun(program.PG_START, program.PG_END)}</td>
+                            </tr>
+                        ))}
                     </tbody>
                 </table>
                 <button
@@ -101,7 +140,7 @@ const ProgramList = ({ programList, getProgramList, onRowClick, programDetail })
                     onClick={()=>{
                         if(programDetail !== null){
                             onRowClick(null); // 클릭 이벤트 발생
-                            getProgramList();
+                            handleShowAll();
                         }
                     }}
                 >

@@ -17,16 +17,18 @@ const MainContent = ({ programList, getProgramList, onRowClick, setProgramDetail
                     <h5>프로그램 현황</h5>
                 </div>
             </div>
-            <ul class="nav nav-tabs">
-                <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#" onClick={goAnotherTap}>목록</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="#" onClick={goAnotherTap}>일정</a>
-                </li>
-            </ul>
+            <div style={{display: 'flex', justifyContent: 'flex-end'}}>
+                <ul class="nav nav-tabs" style={{fontSize: '1rem'}}>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#" onClick={goAnotherTap}>목록</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onClick={goAnotherTap}>일정</a>
+                    </li>
+                </ul>
+            </div>
             {showCalendar ? (
-                <Fullcallendar />
+                <Fullcallendar/>
             ) : (
                 <ProgramList
                     programList={programList}

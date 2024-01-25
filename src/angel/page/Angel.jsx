@@ -60,7 +60,8 @@ const Angel = () => {
             <div className={styles.box4}>
             <RightContent
                 programDetail={programDetail} 
-                onRowClick={onRowClick} 
+                onRowClick={onRowClick}
+                getProgramList={getProgramList}
             />
             </div>
         </div>

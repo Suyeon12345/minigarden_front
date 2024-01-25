@@ -29,3 +29,19 @@ export const programDetailDB = async (program) => {
         throw error;
     }
 };
+
+export const programInsertDB = (program) => {
+    console.log(program);
+    return new Promise((resolve, reject) => {
+        try {
+            const response = axios({
+                method: "post", //@RequestBody
+                url: process.env.REACT_APP_SPRING_IP + "angel/pgInsert",
+                data: program,
+            });
+            resolve(response);
+        } catch (error) {
+            reject(error);
+        }
+    });
+};
