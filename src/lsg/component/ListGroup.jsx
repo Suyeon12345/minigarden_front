@@ -1,7 +1,8 @@
 import React from "react";
 import ListGroup from 'react-bootstrap/ListGroup';
 import {Link} from "react-router-dom";
-import '../css/EmpListGroup.css';
+import styles from "../css/lsg.module.css";
+import empListGroupStyles from "../css/EmpListGroup.module.css";
 /*import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Tab from 'react-bootstrap/Tab';
@@ -10,19 +11,21 @@ import Nav from 'react-bootstrap/Nav';*/
 const EmpListGroup = () => {
     return (
         <>
-        <ListGroup>
-            <ListGroup.Item>관리자페이지</ListGroup.Item>
-            <Link to={"/"} style={{ textDecoration: 'none' }} >
-            <ListGroup.Item variant="primary">직원관리</ListGroup.Item>
-            </Link>
-            <Link to={"/"} style={{ textDecoration: 'none' }} >
-            <ListGroup.Item variant="secondary">부서관리</ListGroup.Item>
-            </Link>
-            <Link to={"/"} style={{ textDecoration: 'none' }} >
-            <ListGroup.Item variant="secondary">일정관리</ListGroup.Item>
-            </Link>
-        </ListGroup>
-        {/*<Tab.Container id="list-group-tabs-example" defaultActiveKey="#link1">
+            <div className={styles.listGroup}>
+                <ListGroup>
+                    <ListGroup.Item>관리자페이지</ListGroup.Item>
+                    <Link to={"/"} style={{textDecoration: 'none'}}>
+                        <ListGroup.Item variant="primary">직원관리</ListGroup.Item>
+                    </Link>
+                    <Link to={"/"} style={{textDecoration: 'none'}}>
+                        <ListGroup.Item variant="secondary">부서관리</ListGroup.Item>
+                    </Link>
+                    <Link to={"/"} style={{textDecoration: 'none'}}>
+                        <ListGroup.Item variant="secondary">일정관리</ListGroup.Item>
+                    </Link>
+                </ListGroup>
+            </div>
+            {/*<Tab.Container id="list-group-tabs-example" defaultActiveKey="#link1">
             <Row>
                 <Col sm={4}>
                     <ListGroup>

@@ -5,8 +5,9 @@ import EmpRow from "./EmpRow";
 import {Button} from "react-bootstrap";
 import ExcelJS from 'exceljs';
 import * as XLSX from 'xlsx';
-import "../css/EmpListAll.css";
 import excelUploader from "./ExcelUploader";
+import styles from "../css/lsg.module.css";
+import empListStyles from "../css/EmpListAll.module.css";
 
 const EmpListAll = () => {
     const [gubun, setGubun] = useState('');
@@ -82,15 +83,15 @@ const EmpListAll = () => {
 
     return (
         <>
-            <div className="container">
-                <div className="page-header">
+            <div className={styles.container}>
+                <div className={empListStyles.pageHeader}>
                     <h5>
                         직원목록
                     </h5>
-                    <hr />
+                    <hr/>
                 </div>
 
-                <div className="row">
+                <div className={empListStyles.row}>
                     <div className="col-3">
                         <select id="gubun" className="form-select" aria-label="분류">
                             <option defaultValue>분류</option>
@@ -110,15 +111,15 @@ const EmpListAll = () => {
                             onKeyUp={empSearch}
                         />
                     </div>
-                    <div className="col-3">
+                    <div className="col-1">
                         <Button variant="dark" id="btn_search" onClick={empList}>
                             검색
                         </Button>
                     </div>
                     <div className="col-3">
-                    <Button variant="success" id="btn_excelDown" onClick={excelDown}>
-                        Excel Down
-                    </Button>
+                        <Button variant="success" id="btn_excelDown" onClick={excelDown}>
+                            Excel Down
+                        </Button>
                     </div>
                     {/*<div className="col-3">
                     <Button variant="success" id="btn_excelUp" onClick={excelUploader}>
@@ -127,7 +128,7 @@ const EmpListAll = () => {
                     </div>*/}
                 </div>
 
-                <div className="emp-list">
+                <div className={empListStyles.empList}>
                     <Table responsive>
                         <thead>
                         <tr>
@@ -158,7 +159,7 @@ const EmpListAll = () => {
                     </div>
 
                     <hr/>
-                    <div className="emplist-footer">
+                    <div className={styles.empListFooter}>
                         <Button variant="secondary" onClick={empList}>
                             전체조회
                         </Button>

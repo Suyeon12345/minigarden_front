@@ -1,26 +1,26 @@
 /* EmpListGroup.css */
 
 /* 사이드 메뉴 스타일 설정 */
-.list-group {
-    width: 200px; /* 메뉴의 너비 조정 */
+/*.list-group {
+    width: 200px; !* 메뉴의 너비 조정 *!
     position: fixed;
     height: 100%;
-    overflow-y: auto; /* 세로 스크롤을 허용하여 내용이 길 때 스크롤 가능하도록 설정 */
-    background-color: #f8f9fa; /* 메뉴의 배경색 설정 */
+    overflow-y: auto; !* 세로 스크롤을 허용하여 내용이 길 때 스크롤 가능하도록 설정 *!
+    background-color: #f8f9fa; !* 메뉴의 배경색 설정 *!
 }
 
 .list-group-item {
     border: none;
-    color: #000; /* 메뉴 아이템의 글자색 설정 */
-    background-color: #f8f9fa; /* 메뉴 아이템의 배경색 설정 */
+    color: #000; !* 메뉴 아이템의 글자색 설정 *!
+    background-color: #f8f9fa; !* 메뉴 아이템의 배경색 설정 *!
 }
 
 .list-group-item:hover {
-    background-color: #e9ecef; /* 마우스 오버 시 배경색 변경 */
+    background-color: #e9ecef; !* 마우스 오버 시 배경색 변경 *!
 }
 
-/* 내용 부분과 메뉴 간의 간격 설정 */
+!* 내용 부분과 메뉴 간의 간격 설정 *!
 .content {
-    margin-left: 250px; /* 메뉴의 너비에 맞게 여백 조정 */
-    padding: 15px; /* 내용 부분의 여백 설정 */
-}
+    margin-left: 250px; !* 메뉴의 너비에 맞게 여백 조정 *!
+    padding: 15px; !* 내용 부분의 여백 설정 *!
+}*/

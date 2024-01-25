@@ -33,18 +33,10 @@ Q
 !src/garden/component/TreeView.jsx,b\5\b59633eac6101b7e6e9fd18b3bdcf9068aa67760
 ;
 src/App.jsx,c\0\c0e9e59a467e1546695bfa22746b302540797a4e
-J
-src/lsg/service/dbLogic.js,8\4\84ff7c700fdf8609094a27c0429764b629087761
-C
-src/lsg/css/lsg.css,f\a\faa95ab4235bb4344fe745f77812f89ebc75b133
 T
 $src/garden/component/StyledStep1.jsx,d\6\d615f8c4f4a9730da406c4496bf06137d64d3866
 Q
 !src/card/component/Cardnavbar.jsx,1\b\1b7202eb8e14f8b539c416f284c388a540945772
-O
-src/lsg/component/ListGroup.jsx,d\1\d1e99f5dfdf89d9ad844208cd68fce5079f812d5
-E
-src/lsg/css/index.css,0\5\05995cf6bc9ff525dc0974e970dfc1b0712fd942
 H
 src/common/page/Home.jsx,d\5\d5088c6a3449851713b5d58fa57047e6d68fe9a2
 O
@@ -55,17 +47,6 @@ R
 src/index.js,f\9\f900edc44cb929c2267a16100a32851f6d5b477d
 A
 public/index.html,f\4\f43ecdf8d666ee908aacce037b4cd72159e4741b
-P
- src/lsg/component/EmpListAll.jsx,4\c\4c0b417fb89ff35f93e752db48be881fdd7ab8d5
-L
-src/lsg/component/empRow.jsx,2\c\2cc06963efb0c083d8084464cc41c81b4c35ba30
-L
-src/lsg/component/EmpRow.jsx,1\8\189c6f3dca56e27bef1f18c66a82c2922c6ce1f9
-Q
-!src/lsg/component/ExcelUpload.jsx,3\3\338c3650afaefccc13441cac1c9490f05e01b9da
-S
-#src/lsg/component/ExcelUploader.jsx,6\5\650fa2ecf9f3f54c0aaee9442fd6040ba33144ba
-J
-src/lsg/css/EmpListAll.css,a\3\a31651dfc5e7db0739098720a31e0283754d4251
-L
-src/lsg/css/EmpListGroup.css,1\1\110a21fc75897b2ccc9eb268917241f3bd43285f
+:
+
+.gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
