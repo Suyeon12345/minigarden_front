@@ -84,6 +84,7 @@ const TreeView = () => {
     );
     updatedDeptData[deptIndex].emp[empIndex].isSelected = true;
     setDeptData(updatedDeptData);
+    console.log("바뀐 값: "+deptData);
     setEmpData({...updatedDeptData[deptIndex].emp[empIndex]});
     dispatch(gardenSlice.actions.setEmp({...updatedDeptData[deptIndex].emp[empIndex]}));
   };
