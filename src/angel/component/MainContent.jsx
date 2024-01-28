@@ -4,11 +4,11 @@ import Fullcallendar from "./Fullcallendar";
 
 const MainContent = ({ programList, getProgramList, onRowClick, setProgramDetail }) => {
 
-    const [showCalendar, setShowCalendar] = useState(false); // 상태 추가
+    const [activeTab, setActiveTab] = useState('list'); // 'list' 또는 'calendar'
 
-    const goAnotherTap = () => {
-        setShowCalendar(!showCalendar); // 토글?
-    }
+    const switchToTab = (tab) => {
+        setActiveTab(tab);
+    };
 
     return (
         <>
@@ -20,14 +20,14 @@ const MainContent = ({ programList, getProgramList, onRowClick, setProgramDetail
             <div style={{display: 'flex', justifyContent: 'flex-end'}}>
                 <ul class="nav nav-tabs" style={{fontSize: '1rem'}}>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#" onClick={goAnotherTap}>목록</a>
+                    <a className={`nav-link ${activeTab === 'list' ? 'active' : ''}`} href="#" onClick={() => switchToTab('list')}>목록</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" onClick={goAnotherTap}>일정</a>
+                    <a className={`nav-link ${activeTab === 'calendar' ? 'active' : ''}`} href="#" onClick={() => switchToTab('calendar')}>일정</a>
                     </li>
                 </ul>
             </div>
-            {showCalendar ? (
+            {activeTab === 'calendar' ? (
                 <Fullcallendar/>
             ) : (
                 <ProgramList

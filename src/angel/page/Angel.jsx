@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import Menu from '../component/Menu';
 import MainContent from '../component/MainContent';
-import RightContent from '../component/RightContent';
 import { programListDB } from '../service/dbLogic';
 import styles from '../css/angel.module.css';
+import RightContent from "../component/RightContent";
 
 const Angel = () => {
     console.log('AngelPage');

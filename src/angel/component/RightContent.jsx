@@ -7,23 +7,19 @@ const RightContent = ({ programDetail, onRowClick, getProgramList }) => {
     console.log('RightContent');
     console.log(programDetail);
 
-    const getDayOfWeek = (dayNumber) => {
-        const days = ['월요일', '화요일', '수요일', '목요일', '금요일', '토요일', '일요일'];
-        return days[dayNumber - 1] || '';
-    };
     // programDetail이 null일 때 기존 값을 유지하도록 처리
     const pgNo = programDetail ? programDetail.PG_NO : '';
     const pgName = programDetail ? programDetail.PG_NAME : '';
     const pgCategory = programDetail ? programDetail.PG_CATEGORY : '';
     const pgTeacher = programDetail ? programDetail.PG_TEACHER : '';
-    const pgDays = programDetail ? getDayOfWeek(programDetail.PG_DAYSOFWEEK) : '';
+    const pgDays = programDetail ? programDetail.PG_DAYSOFWEEK : '';
     const pgStart = programDetail ? new Date(programDetail.PG_START).toLocaleDateString() : '';
     const pgEnd = programDetail ? new Date(programDetail.PG_END).toLocaleDateString() : '';
     const pgContent = programDetail ? programDetail.PG_CONTENT : '';
 
     //프린트 관련
     /*https://www.npmjs.com/package/react-to-print*/
-    //useRef는 함수형 컴포넌트에서 mutable한(ref 객체) 값을 생성하고 관리
+    //useRef는 함수형 컴포넌트에 값을 생성하고 관리
     const componentRef = useRef();
 
     const handlePrint = useReactToPrint({
@@ -46,6 +42,7 @@ const RightContent = ({ programDetail, onRowClick, getProgramList }) => {
 
     //등록관련
     const [isEditing, setIsEditing] = useState(false);
+// 등록 버튼 클릭 시 DB에 업로드
 
     const handleInsertOrUpdate = () => {
         if (isEditing) {
@@ -62,8 +59,10 @@ const RightContent = ({ programDetail, onRowClick, getProgramList }) => {
     return (
         <div ref={componentRef}>
             <div className={styles.box2}>
-                <div className="d-flex">
-                    <span style={{ width: '40%', fontSize: '1.25rem' }}>프로그램 계획서</span>
+                <div>
+                    <h5>프로그램 계획서</h5>
+                </div>
+                <div>
                     <button className="btn btn-outline-danger" style={{ minWidth: '15%', marginRight: '0.5rem' }}>삭제</button>
                     <button
                         className="btn btn-outline-secondary"

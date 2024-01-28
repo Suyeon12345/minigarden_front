@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-function ProgramInsert(props) {
+function ProgramInsert() {
     const [newData, setNewData] = useState({
         pgNo: '',
         pgName: '',
@@ -37,21 +37,21 @@ function ProgramInsert(props) {
                     <tr>
                         <th style={{width: '30%'}}>강사</th>
                         <td style={{width: '30%'}}>
-                            <input type="text" name="pgName" value={newData.pgName} onChange={handleInputChange}/>
+                            <input type="text" name="pgTeacher" value={newData.pgTeacher} onChange={handleInputChange}/>
                         </td>
                         <th style={{width: '30%'}}>요일</th>
                         <td style={{width: '30%'}}>
-                            <input type="text" name="pgCategory" value={newData.pgCategory} onChange={handleInputChange}/>
+                            <input type="text" name="pgDays" value={newData.pgDays} onChange={handleInputChange}/>
                         </td>
                     </tr>
                     <tr>
                         <th style={{width: '30%'}}>시작일</th>
                         <td style={{width: '30%'}}>
-                            <input type="text" name="pgName" value={newData.pgName} onChange={handleInputChange}/>
+                            <input type="text" name="pgStart" value={newData.pgStart} onChange={handleInputChange}/>
                         </td>
                         <th style={{width: '30%'}}>종료일</th>
                         <td style={{width: '30%'}}>
-                            <input type="text" name="pgCategory" value={newData.pgCategory} onChange={handleInputChange}/>
+                            <input type="text" name="pgEnd" value={newData.pgEnd} onChange={handleInputChange}/>
                         </td>
                     </tr>
                     <tr>
@@ -59,7 +59,7 @@ function ProgramInsert(props) {
                     </tr>
                     <tr>
                         <td colSpan="6">
-                            <input type="text" name="pgCategory" value={newData.pgCategory} onChange={handleInputChange}/>
+                            <input type="text" name="pgContent" value={newData.pgContent} onChange={handleInputChange}/>
                         </td>
                     </tr>
                     </tbody>
