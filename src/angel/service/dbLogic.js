@@ -45,3 +45,19 @@ export const programInsertDB = (program) => {
         }
     });
 };
+
+export const scheduleListDB = () => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            const response = await axios({
+                method: 'get',
+                url: process.env.REACT_APP_SPRING_IP + 'angel/scheduleList',
+                // 필요한 경우 params 추가
+            });
+            console.log(response);
+            resolve(response);
+        } catch (error) {
+            reject(error);
+        }
+    });
+};
