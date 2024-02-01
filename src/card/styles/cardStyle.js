@@ -2,7 +2,7 @@ import { styled } from "styled-components";
 
 
 export const Containers=styled.div`
-    height:100vh;
+    height:100%;
     display: grid;
     grid-template-areas: 
     "cardnavbar userpage"
@@ -25,7 +25,7 @@ export const UserList2= styled.div`
 `;
 
 export const Containerz =styled.div`
-    height:100vh;
+    height:100%;
     display: grid;
     grid-template-areas: 
     "userDetail card"

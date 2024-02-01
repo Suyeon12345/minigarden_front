@@ -1,6 +1,6 @@
 import React from "react";
 
-const UserRow = ({ users, onClickRow }) => {
+const UserRow2 = ({ users, onClickRow }) => {
   console.log(users);
 
   const handleRowClick = () => {
@@ -21,4 +21,4 @@ const UserRow = ({ users, onClickRow }) => {
   );
 };
 
-export default UserRow;
+export default UserRow2;

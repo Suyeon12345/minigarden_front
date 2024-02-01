@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { userListDB } from '../page/service/dbLogic';
-
-import UserDetail from './UserDetail'; // UserDetail 컴포넌트 import
-import CardTest from './CardTest';
+import UserRow from './UserRow';
 import {Table ,Button, Form, InputGroup} from 'react-bootstrap';
-import { Card, UserDetail2 , Containerz, UserDetail3 } from '../styles/cardStyle';
-import UserRow2 from './UserRow2';
+import { UserDetail2 , Containerz } from '../styles/cardStyle';
+import UserDetailConsult from './UserDetail2';
 
 const UserPage = () => {
   const [users, setUsers] = useState([]);
@@ -95,7 +93,7 @@ const UserPage = () => {
           <tbody>
             {users &&
               users.map((user, key) => (
-                <UserRow2 key={key} users={user} onClickRow={handleRowClick} className />
+                <UserRow key={key} users={user} onClickRow={handleRowClick} className />
               ))}
           </tbody>
         </Table>
@@ -109,8 +107,7 @@ const UserPage = () => {
       <UserDetail2 >
          <h2 className='text-left' >이용자상세정보</h2> 
       {/* UserDetail에 선택된 사용자 정보 전달 */}
-      {selectedUser && <UserDetail user={selectedUser} />}
-      <Card><CardTest></CardTest></Card>
+      {selectedUser && <UserDetailConsult user={selectedUser} />}
       </UserDetail2>
     </Containerz>
   );

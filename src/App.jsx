@@ -5,6 +5,8 @@ import Navbar from "./common/component/Navbar";
 import Flower from "./flower/page/Flower";
 import Angel from "./angel/page/Angel";
 import Card from "./card/page/Card";
+import CardConsult from "./card/page/CardConsult";
+
 import Lsg from "./lsg/page/Lsg";
 
 import Footer from "./common/component/Footer";
@@ -23,6 +25,7 @@ function App() {
             <Route path="/flower" exact={true} element={<Flower/>}/>
             <Route path="/angel" exact={true} element={<Angel/>}/>
             <Route path="/card" exact={true} element={<Card/>}/>
+            <Route path="/card/consult" exact={true} element={<CardConsult/>}/>
             <Route path="/lsg" exact={true} element={<Lsg/>}/>
           </Routes>
           <Footer></Footer>
